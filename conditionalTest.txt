@@ -1,0 +1,34 @@
+package com.company.conditional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class ConditionalTest {
+    public static Conditional conditional;
+
+    @BeforeEach
+            public void before(){
+        conditional = new Conditional();
+    }
+
+    @Test
+    public void solveQE(){
+        assertArrayEquals(new double[]{3,-1},conditional.solveQE(1,-2,-3));
+        assertArrayEquals(new double[]{-6},conditional.solveQE(1,12,36));
+        assertArrayEquals(new double[]{},conditional.solveQE(1,1,2));
+    }
+
+    @Test
+    public void vowelOrConsonant(){
+        //System.out.println(conditional.vowelOrConsonant("k"));
+        assertEquals("Error. Not a single character.",conditional.vowelOrConsonant("ab"));
+        assertEquals("Error. Not a letter. Enter uppercase or lowercase letter.",conditional.vowelOrConsonant("1"));
+        assertEquals("Input letter is Vowel",conditional.vowelOrConsonant("a"));
+        assertEquals("Input letter is Consonant",conditional.vowelOrConsonant("b"));
+    }
+
+
+
+}
