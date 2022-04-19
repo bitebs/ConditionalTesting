@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/words.js"></script>
+    <link rel="stylesheet" href="css/w3.css">
+    <title>Document</title>
+    <style>
+        td{
+            border: 1px solid black;
+            padding: 8px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <form class="w3-container">
+        <div class="w3-section">
+            <label>Regular Expression</label>
+            <input class="w3-input" type="text" id="regexp">
+        </div>
+        <div class="w3-section">
+            <button type="button" class="w3-btn w3-padding w3-teal"
+            id="ok" style="width:150px">OK</button>
+        </div>
+    </form>
+    <table>
+        <tbody>
+            <tr>
+                <td>1</td><td>2</td>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="container"
+    class="w3-card w3-container w3-margin w3-padding-16">
+        
+    </div>
+    
+
+    <script>
+        console.log(words[4]);
+        var table = $('<table>');
+            var tbody = $('<tbody>');
+                 for (let i=0; i<10; i++){
+                     var tr=$('<tr>');
+                        tbody.append(tr);
+                         for (let j=0; j<10; j++){
+                             var td=$('<td>').html(words[i*10+j])
+                                if (i%2==0) td.addClass("w3-light-gray");
+                                tr.append(td);
+                         }
+                 }  
+        table.append(tbody);    
+        $('#container').append(table);
+
+    </script>
+</body>
+</html>
